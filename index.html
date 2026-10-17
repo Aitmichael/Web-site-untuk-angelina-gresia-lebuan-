@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Untuk Kamu yang Selalu di Hatiku</title>
+  
+  <!-- Font Google & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  
+  <!-- File CSS Eksternal -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Library Efek Konfeti -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+
+  <!-- Canvas Partikel Background -->
+  <canvas id="particles-canvas"></canvas>
+
+  <!-- Player Musik Floating -->
+  <div class="music-player-bar">
+    <button class="music-btn" id="play-pause-btn" onclick="toggleAudio()">🎵</button>
+    <div style="text-align: left; font-size: 0.85rem;">
+      <div style="font-weight: 600; color: #f472b6;">Lagu Kenangan</div>
+      <div style="color: #94a3b8; font-size: 0.75rem;" id="music-status">Klik untuk Putar Musik</div>
+    </div>
+  </div>
+
+  <!-- Container Iframe YouTube resmi untuk API (Disembunyikan) -->
+  <div style="position: fixed; bottom: -100px; left: -100px; opacity: 0; pointer-events: none;">
+    <div id="youtube-player"></div>
+  </div>
+
+  <div class="container">
+
+    <!-- LEMBAR 1: PEMBUKA -->
+    <section id="lembar1">
+      <div class="card">
+        <h1>Haiii, Kamuuu angelinaa gresiaa lebuann ❤️</h1>
+        <p>
+          Terima kasih sudah bersedia membuka pesan sederhana ini.<br>
+          Setiap kenangan indah yang pernah kita lewati bersama selalu memiliki tempat istimewa di hatiku.
+        </p>
+        <p style="font-size: 0.95rem; color: #cbd5e1;">
+          Aku membuatkan halaman khusus ini hanya untukmu, untuk mengingat kembali semua cerita yang pernah kita ukir bersama.
+        </p>
+        <a href="#lembar2" class="btn" onclick="autoPlayMusic()">Buka Surat Ungkapan 💌</a>
+      </div>
+    </section>
+
+    <!-- LEMBAR 2: PESAN BALIKAN -->
+    <section id="lembar2">
+      <div class="card">
+        <h2>Perasaanku yang masih sama dan sangat sayang sama kamu ✨</h2>
+        <p>
+          Aku menyadari bahwa setiap perjalanan pasti ada pasang surutnya. Namun, waktu dan jarak justru makin menyadarkanku betapa berartinya kehadiranmu dalam hidupku.
+        </p>
+        <p>
+          Aku ingin kita memperbaiki apa yang pernah kurang , aku belajar dari kesalahan yang lalu, dan aku ingin merajut kembali kisah bahagia kita yang sempat tertunda.dan aku ingin selalu menjadi bagian hidupmu dan menjadi pasangan yang sangat kuat 
+          dan aku ingin kita yang selalu ada satu sama lain dan saling menguatkan salaling rindu saling kangen dan salaling mencintai . aku sangat ingin kamu kembali dan bercerita tentang hari hari mu dan memeluk mu supaya kamu 
+          merasa aman dan tenang , dan aku pada waktu itu merasa hidup ku hampa tanpa hadir mu disni dan hari hari merasa tidak ada semangat semenjak tidak ada kamu di sisi ku , dan aku selalu sedih dan menyesal atas kesalahan ku yang ku buat pada waktu itu 
+          dan aku ingin bersama mu kembali dan aku berjanji aku akan selalu membahagia kan kamu dan aku tidak ingin lagi ke hilangan seseorang yang aku sayang dan aku cintai sampai selama lama nya . aku mohon kasih aku kesempatan , aku bener bener tidak ingin
+          kehilangan kamu , aku menyesal , aku berjanji sampai akhir hidup ku aku akan selalu sayang sama kamu dan menjaga kamu dan membuat mu bahagia selalu . makasih ya sudah membaca nya , aku sayang sama kamu angelina 
+          gresia lebuan ❤️❤️
+        </p>
+        <p class="romantic-font" style="font-size: 2rem; color: #f472b6; margin-top: 15px;">
+          "Bisakah kita mulai cerita baru bersama lagi?"
+        </p>
+        
+        <div style="margin-top: 25px;">
+          <button class="btn" onclick="terimaBalikan()">Aku Mau! 💕</button>
+          <a href="#lembar3" class="btn btn-secondary">Lihat Foto Kenangan 📸</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- LEMBAR 3: GALERI FOTO MANTAN/KENANGAN -->
+    <section id="lembar3">
+      <div class="card">
+        <h2>Momen Indah Kita 📸</h2>
+        <p>Setiap foto menyimpan ribuan kenangan manis yang tidak pernah pudar.</p>
+        
+        <div class="gallery-grid">
+          <!-- Foto 1 -->
+          <div class="gallery-item" onclick="openLightbox('Foto1.jpg')">
+            <img src="Foto1.jpg" alt="Kenangan 1">
+          </div>
+
+          <!-- Foto 2 -->
+          <div class="gallery-item" onclick="openLightbox('Foto2.jpg')">
+            <img src="Foto2.jpg" alt="Kenangan 2">
+          </div>
+
+          <!-- Foto 3 -->
+          <div class="gallery-item" onclick="openLightbox('Foto3.jpg')">
+            <img src="Foto3.jpg" alt="Kenangan 3">
+          </div>
+
+          <!-- Foto 4 -->
+          <div class="gallery-item" onclick="openLightbox('Foto4.jpg')">
+            <img src="Foto4.jpg" alt="Kenangan 4">
+          </div>
+
+          <!-- Foto 5 -->
+          <div class="gallery-item" onclick="openLightbox('Foto5.jpg')">
+            <img src="Foto5.jpg" alt="Kenangan 5">
+          </div>
+
+          <!-- Foto 6 -->
+          <div class="gallery-item" onclick="openLightbox('Foto6.jpg')">
+            <img src="Foto6.jpg" alt="Kenangan 6">
+          </div>
+        </div>
+
+        <div style="margin-top: 30px;">
+          <a href="#lembar2" class="btn">Kembali ke Surat 💌</a>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- Modal Lightbox Foto -->
+  <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+    <img id="lightbox-img" src="" alt="Zoom Foto">
+  </div>
+
+  <!-- YouTube Player API Script -->
+  <script src="https://www.youtube.com/iframe_api"></script>
+
+  <!-- File JS Eksternal -->
+  <script src="script.js"></script>
+</body>
+</html>
